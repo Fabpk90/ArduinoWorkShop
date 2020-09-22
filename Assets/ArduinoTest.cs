@@ -8,16 +8,20 @@ class City
 {
     List<int> cities;
     string name;
-    bool isConected;
+    public bool isConnected;
 
     public City(List<int> cities, string name)
     {
         this.cities = cities;
         this.name = name;
 
-        isConected = false;
+        isConnected = false;
     }
 
+    public void Toggle()
+    {
+        isConnected = !isConnected;
+    }
 }
 public class ArduinoTest : MonoBehaviour 
 {
@@ -37,6 +41,13 @@ public class ArduinoTest : MonoBehaviour
         //cities.Add(new City());
     }
 
+    public void ToggleCity(int index)
+    {
+        cities[index].Toggle();
+
+
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
@@ -54,6 +65,7 @@ public class ArduinoTest : MonoBehaviour
     // failure to connect.
     void OnConnectionEvent(bool success)
     {
+        arduinoConnected = success;
         Debug.Log(success ? "Device connected" : "Device disconnected");
     }
 
