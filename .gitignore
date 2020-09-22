@@ -421,8 +421,5 @@ MigrationBackup/
 .cache/
 *.akd
 *.validationcache
-[Aa]ssets/WwiseSettings.xml
-[Aa]ssets/WwiseSettings.xml.meta
-Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,unity
