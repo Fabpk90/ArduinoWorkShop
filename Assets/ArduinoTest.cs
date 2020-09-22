@@ -34,6 +34,8 @@ public class ArduinoTest : MonoBehaviour
 
     public EventHandler<string> OnMsgReceived;
 
+    public EventHandler<bool> OnToggleCity;
+
     private void Start() 
     {
         serial = GetComponent<SerialController>();
@@ -43,9 +45,29 @@ public class ArduinoTest : MonoBehaviour
 
     public void ToggleCity(int index)
     {
-        cities[index].Toggle();
+        City city = cities[index];
+        if (city.isConnected)
+        {
 
+        }
+    }
 
+    public void ActivateCity(int index)
+    {
+        City city = cities[index];
+        if(!city.isConnected)
+        {
+
+        }
+    }
+
+    public void DeActivateCity(int index)
+    {
+        City city = cities[index];
+        if (city.isConnected)
+        {
+
+        }
     }
 
     private void Update()
