@@ -8,16 +8,20 @@ class City
 {
     List<int> cities;
     string name;
-    bool isConected;
+    public bool isConnected;
 
     public City(List<int> cities, string name)
     {
         this.cities = cities;
         this.name = name;
 
-        isConected = false;
+        isConnected = false;
     }
 
+    public void Toggle()
+    {
+        isConnected = !isConnected;
+    }
 }
 public class ArduinoTest : MonoBehaviour 
 {
@@ -30,11 +34,40 @@ public class ArduinoTest : MonoBehaviour
 
     public EventHandler<string> OnMsgReceived;
 
+    public EventHandler<bool> OnToggleCity;
+
     private void Start() 
     {
         serial = GetComponent<SerialController>();
 
         //cities.Add(new City());
+    }
+
+    public void ToggleCity(int index)
+    {
+        City city = cities[index];
+        if (city.isConnected)
+        {
+
+        }
+    }
+
+    public void ActivateCity(int index)
+    {
+        City city = cities[index];
+        if(!city.isConnected)
+        {
+
+        }
+    }
+
+    public void DeActivateCity(int index)
+    {
+        City city = cities[index];
+        if (city.isConnected)
+        {
+
+        }
     }
 
     private void Update()
@@ -54,6 +87,7 @@ public class ArduinoTest : MonoBehaviour
     // failure to connect.
     void OnConnectionEvent(bool success)
     {
+        arduinoConnected = success;
         Debug.Log(success ? "Device connected" : "Device disconnected");
     }
 
