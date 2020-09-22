@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3157003241	Test			\Default Work Unit\Test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	4349718	Cat	C:\Users\ELE5d5ab19ee5329\Documents\WwiseAtlas\trunk\WwiseProjectAtlas\.cache\Windows\SFX\Feedbacks\animals cat blue meow 11 mono 96kHz_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cat		144064
+
