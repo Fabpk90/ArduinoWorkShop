@@ -4,10 +4,19 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
+public enum ECityState
+{
+    Plugged,
+    Dead,
+    Available,
+    Connected
+}
+
 public class ArduinoTest : MonoBehaviour 
 {
     public SerialController serial;
-    private List<City> cities;
+    private List<City> _cities;
+    private List<ECityState> _cityStates;
 
     public bool isArduinoA;
 
@@ -20,8 +29,38 @@ public class ArduinoTest : MonoBehaviour
     private void Start() 
     {
         serial = GetComponent<SerialController>();
+        
+        _cityStates = new List<ECityState>();
+        for (int i = 0; i < 2; i++)
+        {
+            _cityStates.Add(ECityState.Available);
+        }
 
         //cities.Add(new City());
+    }
+
+    public int GetPluggedCities()
+    {
+        int plugged = 0;
+
+        foreach (ECityState state in _cityStates)
+        {
+            if (state == ECityState.Plugged)
+                plugged++;
+        }
+
+        return plugged;
+    }
+
+    public void SetCityState(int index, ECityState state)
+    {
+        Debug.Log("Index " + index + " is set to" + state);
+        _cityStates[index] = state;
+    }
+
+    public bool isCityNotDead(int index)
+    {
+        return _cityStates[index] != ECityState.Dead;
     }
 
     void OnMessageArrived(string msg)
@@ -38,4 +77,18 @@ public class ArduinoTest : MonoBehaviour
         Debug.Log(success ? "Device connected" : "Device disconnected");
     }
 
+    public bool isCityPlugged(int index)
+    {
+        return _cityStates[index] == ECityState.Plugged;
+    }
+
+    public bool isCityAvailable(int index)
+    {
+        return _cityStates[index] == ECityState.Available;
+    }
+
+    public bool isCityConnected(int index)
+    {
+        return _cityStates[index] == ECityState.Connected;
+    }
 }

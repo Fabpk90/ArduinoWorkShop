@@ -3,23 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class City
+struct City
 {
     List<int> cities;
     string name;
-    public bool isConnected;
 
     public City(List<int> cities, string name)
     {
         this.cities = cities;
         this.name = name;
-
-        isConnected = false;
-    }
-
-    public void Toggle()
-    {
-        isConnected = !isConnected;
     }
 }
 
@@ -49,7 +41,7 @@ public class ArduinoManager : MonoBehaviour
 
     private void ChooseStartingCities(object sender, SerialController serial)
     {
-        serial.SendSerialMessage("S");
+        //serial.SendSerialMessage("S");
         
         //TODO: assign start and end, and send them
     }
@@ -69,13 +61,44 @@ public class ArduinoManager : MonoBehaviour
         }
         else
             print("B " + msg);
-        
+
         var index = Convert.ToInt32(msg);
-        allCities[index].Toggle();
+
+        if (arduino.isCityNotDead(index))
+        {
+            if (arduino.isCityPlugged(index))
+            {
+                //TODO: see if the city really available
+                arduino.SetCityState(index, ECityState.Available);
+            }
+            else if (arduino.isCityAvailable(index))
+            {
+                //TODO: see if the city is connected
+                arduino.SetCityState(index, ECityState.Plugged);
+                
+                var pluggedCities = arduino.GetPluggedCities();
+                if ((pluggedCities & 1) == 0) //odd
+                {
+                    print("CONNECTED");
+                    //check if good city
+                    //if good connect
+                }
+            }
+            else if (arduino.isCityConnected(index))
+            {
+                arduino.SetCityState(index, ECityState.Available);
+                //TODO: see how to know to which is connected (list of pairs ?)
+                //available for this city and plugged for the other not connected
+            }
+
+            CheckForWin();
+        }
+        else
+        {
+            //BEEP !
+        }
+
         
-        print(allCities[index].isConnected ? "connected" : "disconnected");
-        
-        CheckForWin();
     }
 
     private void OnDisable()
