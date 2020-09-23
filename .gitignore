@@ -422,3 +422,4 @@ MigrationBackup/
 *.validationcache
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,unity
+Assets/WwiseSettings.xml

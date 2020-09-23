@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc2261b51bba57468056b52ff0b3191, type: 3}
-  m_Name: 0A250719-9FEF-484D-A1B8-6934F6917FBA
+  m_Script: {fileID: 11500000, guid: c85a7e1e6ebf8e442a1d06d4060936b1, type: 3}
+  m_Name: 320CB0B8-D86D-4547-84E1-F869EB0D75E7
   m_EditorClassIdentifier: 
-  objectName: Feedback_Start
-  id: 2237171361
-  guid: 0A250719-9FEF-484D-A1B8-6934F6917FBA
+  objectName: Voice_SNB
+  id: 133924915
+  guid: 320CB0B8-D86D-4547-84E1-F869EB0D75E7
