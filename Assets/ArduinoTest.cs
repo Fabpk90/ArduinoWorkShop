@@ -4,35 +4,16 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
-class City
-{
-    List<int> cities;
-    string name;
-    public bool isConnected;
-
-    public City(List<int> cities, string name)
-    {
-        this.cities = cities;
-        this.name = name;
-
-        isConnected = false;
-    }
-
-    public void Toggle()
-    {
-        isConnected = !isConnected;
-    }
-}
 public class ArduinoTest : MonoBehaviour 
 {
-    private SerialController serial;
+    public SerialController serial;
     private List<City> cities;
 
     public bool isArduinoA;
 
-    private bool arduinoConnected;
-
     public EventHandler<string> OnMsgReceived;
+
+    public EventHandler<SerialController> OnConnected;
 
     public EventHandler<bool> OnToggleCity;
 
@@ -41,41 +22,6 @@ public class ArduinoTest : MonoBehaviour
         serial = GetComponent<SerialController>();
 
         //cities.Add(new City());
-    }
-
-    public void ToggleCity(int index)
-    {
-        City city = cities[index];
-        if (city.isConnected)
-        {
-
-        }
-    }
-
-    public void ActivateCity(int index)
-    {
-        City city = cities[index];
-        if(!city.isConnected)
-        {
-
-        }
-    }
-
-    public void DeActivateCity(int index)
-    {
-        City city = cities[index];
-        if (city.isConnected)
-        {
-
-        }
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            serial.SendSerialMessage("salut");
-        }
     }
 
     void OnMessageArrived(string msg)
@@ -87,7 +33,8 @@ public class ArduinoTest : MonoBehaviour
     // failure to connect.
     void OnConnectionEvent(bool success)
     {
-        arduinoConnected = success;
+        if(success)
+            OnConnected?.Invoke(this, serial);
         Debug.Log(success ? "Device connected" : "Device disconnected");
     }
 
