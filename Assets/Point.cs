@@ -8,6 +8,7 @@ public class Point : MonoBehaviour
 	public static List<Point> points = new List<Point>();
 	public List<Point> connected = new List<Point>();
 	public PointManager manager;
+
 	private void OnEnable()
 	{
 		points.Add(this);
