@@ -29,6 +29,7 @@ public class ArduinoManager : MonoBehaviour
     public ArduinoTest arduinoB;
 
     public EventHandler OnGameStart;
+    public EventHandler OnGameWin;
 
     private List<City> allCities;
 
@@ -46,14 +47,74 @@ public class ArduinoManager : MonoBehaviour
         allCities = new List<City>();
 
         allCities.Add(new City(new List<int>() { 1 }, "CityA", 0));
-        allCities.Add(new City(new List<int>() { 0 }, "CityA", 0));
-        allCities.Add(new City(new List<int>() { 2 }, "CityA", 0));
+        allCities.Add(new City(new List<int>() { 0 }, "CityB", 0));
+        allCities.Add(new City(new List<int>() { 2 }, "CityC", 0));
         
         arduinoA.OnMsgReceived += OnMessageReceived;
         arduinoB.OnMsgReceived += OnMessageReceived;
 
         arduinoA.OnConnected += ChooseStartingCities;
         arduinoB.OnConnected += ChooseStartingCities;
+
+        arduinoA.OnWireConnected += (sender, tuple) =>
+        {
+            arduinoA.serial.SendSerialMessage("D" + tuple.Item1);
+            arduinoA.serial.SendSerialMessage("D" + tuple.Item2);
+        };
+        
+        arduinoA.OnWireFriendlyPlugged += (sender, i) =>
+        {
+            arduinoA.serial.SendSerialMessage("P" + i);
+        };
+
+        arduinoA.OnWirePlugged += (sender, i) =>
+        {
+            arduinoA.indexPlugged = i;
+            arduinoA.serial.SendSerialMessage("P" + i);
+            foreach (int city in allCities[i].cities)
+            {
+                if (allCities[city].state == ECityState.Available)
+                {
+                    arduinoA.serial.SendSerialMessage("A" + i);
+                }
+            }
+        };
+
+        arduinoA.OnWireDisconnected += (sender, i) =>
+        {
+            print("disconnected " + i);
+        };
+        
+        arduinoB.OnWireFriendlyPlugged += (sender, i) =>
+        {
+            arduinoB.serial.SendSerialMessage("P" + i);
+        };
+        
+        arduinoB.OnWireConnected += (sender, tuple) =>
+        {
+            arduinoB.serial.SendSerialMessage("D" + tuple.Item1);
+            arduinoB.serial.SendSerialMessage("D" + tuple.Item2);
+        };
+        
+        arduinoB.OnWirePlugged += (sender, i) =>
+        {
+            arduinoB.serial.SendSerialMessage("P" + i);
+            
+            //activate all adjacent cities
+
+            foreach (int city in allCities[i].cities)
+            {
+                if (allCities[city].state == ECityState.Available)
+                {
+                    arduinoA.serial.SendSerialMessage("A" + i);
+                }
+            }
+        };
+        
+        arduinoB.OnWireDisconnected += (sender, i) =>
+        {
+            print("disconnected " + i);
+        };
         
         adjacencyMatrix = new int[allCities.Count, allCities.Count];
         ComputeAdjacency();
@@ -66,6 +127,14 @@ public class ArduinoManager : MonoBehaviour
             startingIndex = (int) (Random.value * allCities.Count);
             endIndex = (int) (Random.value * allCities.Count);
         } while (startingIndex == endIndex && ComputeDistance(startingIndex, endIndex) > numOfCables);
+
+        var city = allCities[startingIndex];
+        city.state = ECityState.Available;
+        allCities[startingIndex] = city;
+
+        city = allCities[endIndex];
+        city.state = ECityState.Available;
+        allCities[endIndex] = city;
     }
 
     private int ComputeDistance(int startIndex, int endIndex)
@@ -91,7 +160,10 @@ public class ArduinoManager : MonoBehaviour
     private void CheckForWin()
     {
         if(allCities[endIndex].state == ECityState.Connected)
+        {
             print("T'as gagné, t'es trop fort !");
+            OnGameWin?.Invoke(this, null);
+        }
     }
 
     public void OnMessageReceived(object o, string msg)
@@ -113,30 +185,44 @@ public class ArduinoManager : MonoBehaviour
             {
                 //TODO: see if the city really available
                 arduino.SetCityState(index, ECityState.Available);
+
+                arduino.OnWireDisconnected?.Invoke(this, index);
             }
             else if (arduino.isCityAvailable(index))
             {
                 //TODO: see if the city is connected
+                foreach (int i in allCities[index].cities)
+                {
+                    if (allCities[i].state != ECityState.Available)
+                        arduino.serial.SendSerialMessage("D" + i);
+                }
                 arduino.SetCityState(index, ECityState.Plugged);
-                
-                //TODO: send signal to all available cities
+
+                //TODO: send signal to all available cities, to shut them off
                 
                 var city = allCities[index];
-                city.state = ECityState.Available;
+                city.state = ECityState.Available;// for the other player
                 allCities[index] = city;
-                
-                var pluggedCities = arduino.GetPluggedCities();
-                if ((pluggedCities & 1) == 0) //odd
-                {
-                    print("CONNECTED");
-                    //check if good city
-                    //if good connect
-                }
             }
             else if (arduino.isCityConnected(index))
             {
                 arduino.SetCityState(index, ECityState.Available);
-                //TODO: see how to know to which is connected (list of pairs ?)
+                arduino.OnWireDisconnected?.Invoke(this, index);
+
+                foreach (Tuple<int,int> cable in arduino.cables)
+                {
+                    if (cable.Item1 == index)
+                    {
+                        //chiant
+                    }
+                    else if (cable.Item2 == index)
+                    {
+                        foreach (var city in allCities[index].cities)
+                        {
+                            arduino.serial.SendSerialMessage("A" + city);
+                        }
+                    }
+                }
                 //available for this city and plugged for the other not connected
             }
 
@@ -145,7 +231,6 @@ public class ArduinoManager : MonoBehaviour
         else
         {
             //BEEP !
-            
         }
     }
 

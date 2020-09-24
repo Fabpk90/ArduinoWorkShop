@@ -52,7 +52,7 @@ class Dijkstra
                     distance[v] = distance[u] + graph[u, v];
         }
  
-        Print(distance, verticesCount);
+        //Print(distance, verticesCount);
         return distance;
     }
  

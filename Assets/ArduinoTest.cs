@@ -27,11 +27,13 @@ public class ArduinoTest : MonoBehaviour
 
     public EventHandler<SerialController> OnConnected;
 
-    public EventHandler OnWirePlugged;
-    public EventHandler OnWireFriendlyPlugged;
-    public EventHandler OnWireConnected;
+    public EventHandler<int> OnWirePlugged;
+    public EventHandler<int> OnWireFriendlyPlugged;
+    public EventHandler<Tuple<int, int>> OnWireConnected;
 
-    public EventHandler<bool> OnToggleCity;
+    public EventHandler<int> OnWireDisconnected;
+
+    public int indexPlugged = -1;
 
     private void Start() 
     {
@@ -73,13 +75,13 @@ public class ArduinoTest : MonoBehaviour
             if (cableInPlugs == null)
             {
                 cableInPlugs = new Tuple<int, int>(index, -1);
-                OnWirePlugged?.Invoke(this , null);
+                OnWirePlugged?.Invoke(this , index);
 
                 foreach (Tuple<int,int> cable in cables)
                 {
                     if (cable.Item2 == index)
                     {
-                        OnWireFriendlyPlugged?.Invoke(this, null);
+                        OnWireFriendlyPlugged?.Invoke(this, index);
                         return;
                     }
                 }
@@ -90,8 +92,8 @@ public class ArduinoTest : MonoBehaviour
                 cableInPlugs = new Tuple<int, int>(index0, index);
                 
                 cables.Add(cableInPlugs);
+                OnWireConnected?.Invoke(this, cableInPlugs);
                 cableInPlugs = null;
-                OnWireConnected?.Invoke(this, null);
             }
         }
     }
@@ -128,5 +130,15 @@ public class ArduinoTest : MonoBehaviour
     public bool isCityConnected(int index)
     {
         return _cityStates[index] == ECityState.Connected;
+    }
+
+    public int GetCableAmount()
+    {
+        int count = cables.Count;
+
+        if (cableInPlugs != null)
+            return count + 1;
+
+        return count;
     }
 }
