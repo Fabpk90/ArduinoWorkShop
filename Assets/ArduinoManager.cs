@@ -208,12 +208,17 @@ public class ArduinoManager : MonoBehaviour
             {
                 arduino.SetCityState(index, ECityState.Available);
                 arduino.OnWireDisconnected?.Invoke(this, index);
-
+                
+                Tuple<int, int> c = null;
+                
                 foreach (Tuple<int,int> cable in arduino.cables)
                 {
                     if (cable.Item1 == index)
                     {
                         //chiant
+                        c = cable;
+
+                        arduino.serial.SendSerialMessage("D" + cable.Item2);
                     }
                     else if (cable.Item2 == index)
                     {
@@ -223,6 +228,8 @@ public class ArduinoManager : MonoBehaviour
                         }
                     }
                 }
+
+                arduino.cables.Remove(c);
                 //available for this city and plugged for the other not connected
             }
 
