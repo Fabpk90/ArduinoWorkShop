@@ -29,6 +29,7 @@
         </e>
         <e p="ArduinoManager.cs" t="Include" />
         <e p="ArduinoTest.cs" t="Include" />
+        <e p="Dijkstra.cs" t="Include" />
         <e p="Point.cs" t="Include" />
         <e p="PointManager.cs" t="Include" />
         <e p="StreamingAssets" t="Include">

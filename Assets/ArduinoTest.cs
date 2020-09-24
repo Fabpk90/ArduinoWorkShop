@@ -18,11 +18,18 @@ public class ArduinoTest : MonoBehaviour
     private List<City> _cities;
     private List<ECityState> _cityStates;
 
+    public List<Tuple<int, int>> cables;
+    private Tuple<int, int> cableInPlugs;
+
     public bool isArduinoA;
 
     public EventHandler<string> OnMsgReceived;
 
     public EventHandler<SerialController> OnConnected;
+
+    public EventHandler OnWirePlugged;
+    public EventHandler OnWireFriendlyPlugged;
+    public EventHandler OnWireConnected;
 
     public EventHandler<bool> OnToggleCity;
 
@@ -35,6 +42,10 @@ public class ArduinoTest : MonoBehaviour
         {
             _cityStates.Add(ECityState.Available);
         }
+        
+        cables = new List<Tuple<int, int>>();
+
+        cableInPlugs = null;
 
         //cities.Add(new City());
     }
@@ -56,6 +67,33 @@ public class ArduinoTest : MonoBehaviour
     {
         Debug.Log("Index " + index + " is set to" + state);
         _cityStates[index] = state;
+
+        if (state == ECityState.Plugged)
+        {
+            if (cableInPlugs == null)
+            {
+                cableInPlugs = new Tuple<int, int>(index, -1);
+                OnWirePlugged?.Invoke(this , null);
+
+                foreach (Tuple<int,int> cable in cables)
+                {
+                    if (cable.Item2 == index)
+                    {
+                        OnWireFriendlyPlugged?.Invoke(this, null);
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                int index0 = cableInPlugs.Item1;
+                cableInPlugs = new Tuple<int, int>(index0, index);
+                
+                cables.Add(cableInPlugs);
+                cableInPlugs = null;
+                OnWireConnected?.Invoke(this, null);
+            }
+        }
     }
 
     public bool isCityNotDead(int index)
