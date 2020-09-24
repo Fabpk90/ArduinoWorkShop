@@ -4,78 +4,63 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
-class City
+public enum ECityState
 {
-    List<int> cities;
-    string name;
-    public bool isConnected;
-
-    public City(List<int> cities, string name)
-    {
-        this.cities = cities;
-        this.name = name;
-
-        isConnected = false;
-    }
-
-    public void Toggle()
-    {
-        isConnected = !isConnected;
-    }
+    Plugged,
+    Dead,
+    Available,
+    Connected
 }
+
 public class ArduinoTest : MonoBehaviour 
 {
-    private SerialController serial;
-    private List<City> cities;
+    public SerialController serial;
+    private List<City> _cities;
+    private List<ECityState> _cityStates;
 
     public bool isArduinoA;
 
-    private bool arduinoConnected;
-
     public EventHandler<string> OnMsgReceived;
+
+    public EventHandler<SerialController> OnConnected;
 
     public EventHandler<bool> OnToggleCity;
 
     private void Start() 
     {
         serial = GetComponent<SerialController>();
+        
+        _cityStates = new List<ECityState>();
+        for (int i = 0; i < 2; i++)
+        {
+            _cityStates.Add(ECityState.Available);
+        }
 
         //cities.Add(new City());
     }
 
-    public void ToggleCity(int index)
+    public int GetPluggedCities()
     {
-        City city = cities[index];
-        if (city.isConnected)
-        {
+        int plugged = 0;
 
+        foreach (ECityState state in _cityStates)
+        {
+            if (state == ECityState.Plugged)
+                plugged++;
         }
+
+        return plugged;
     }
 
-    public void ActivateCity(int index)
+    public void SetCityState(int index, ECityState state)
     {
-        City city = cities[index];
-        if(!city.isConnected)
-        {
-
-        }
+        Debug.Log("Index " + index + " is set to" + state);
+        _cityStates[index] = state;
     }
 
-    public void DeActivateCity(int index)
+    public bool isCityNotDead(int index)
     {
-        City city = cities[index];
-        if (city.isConnected)
-        {
-
-        }
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            serial.SendSerialMessage("salut");
-        }
+        return _cityStates[index] != ECityState.Dead;
     }
 
     void OnMessageArrived(string msg)
@@ -87,8 +72,23 @@ public class ArduinoTest : MonoBehaviour
     // failure to connect.
     void OnConnectionEvent(bool success)
     {
-        arduinoConnected = success;
+        if(success)
+            OnConnected?.Invoke(this, serial);
         Debug.Log(success ? "Device connected" : "Device disconnected");
     }
 
+    public bool isCityPlugged(int index)
+    {
+        return _cityStates[index] == ECityState.Plugged;
+    }
+
+    public bool isCityAvailable(int index)
+    {
+        return _cityStates[index] == ECityState.Available;
+    }
+
+    public bool isCityConnected(int index)
+    {
+        return _cityStates[index] == ECityState.Connected;
+    }
 }
