@@ -114,6 +114,7 @@ public class ArduinoManager : MonoBehaviour
         arduinoB.OnWireDisconnected += (sender, i) =>
         {
             print("disconnected " + i);
+            arduinoB.serial.SendSerialMessage("D"+i);
         };
         
         adjacencyMatrix = new int[allCities.Count, allCities.Count];
@@ -183,10 +184,9 @@ public class ArduinoManager : MonoBehaviour
         {
             if (arduino.isCityPlugged(index))
             {
+                arduino.OnWireDisconnected?.Invoke(this, index);
                 //TODO: see if the city really available
                 arduino.SetCityState(index, ECityState.Available);
-
-                arduino.OnWireDisconnected?.Invoke(this, index);
             }
             else if (arduino.isCityAvailable(index))
             {
