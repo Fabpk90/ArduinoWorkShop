@@ -1,5 +1,31 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1069431850	Player			\STATES_Voices\Player	
+	3351207106	STATES_MainMusic			\STATES_Music\STATES_MainMusic	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Player			
+	2188949036	Player2	Player			
+	2188949039	Player1	Player			
+	748895195	None	STATES_MainMusic			
+	987635872	Level_00	STATES_MainMusic			
+	987635873	Level_01	STATES_MainMusic			
+	987635874	Level_02	STATES_MainMusic			
+	987635875	Level_03	STATES_MainMusic			
+	1125500713	Intro	STATES_MainMusic			
+	4184794294	Outro	STATES_MainMusic			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	2974103762	Mute			\Default Work Unit\Master Audio Bus\Mute	
+	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+	4228153068	Feedback			\Default Work Unit\Master Audio Bus\Feedback	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1364690296	Voice_Player1			\Default Work Unit\Master Audio Bus\Voice\Voice_Player1	
+	1364690299	Voice_Player2			\Default Work Unit\Master Audio Bus\Voice\Voice_Player2	
+	2570641196	SFX_Player2			\Default Work Unit\Master Audio Bus\Feedback\SFX_Player2	
+	2570641199	SFX_Player1			\Default Work Unit\Master Audio Bus\Feedback\SFX_Player1	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

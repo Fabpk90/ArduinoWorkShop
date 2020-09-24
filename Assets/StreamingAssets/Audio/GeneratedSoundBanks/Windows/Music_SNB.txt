@@ -1,0 +1,31 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1346240278	Play_MainMusic			\EVENTS_MUSIC\EVENTS_Music\Play_MainMusic	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3351207106	STATES_MainMusic			\STATES_Music\STATES_MainMusic	
+
+State	ID	Name	State Group			Notes
+	748895195	None	STATES_MainMusic			
+	987635872	Level_00	STATES_MainMusic			
+	987635873	Level_01	STATES_MainMusic			
+	987635874	Level_02	STATES_MainMusic			
+	987635875	Level_03	STATES_MainMusic			
+	1125500713	Intro	STATES_MainMusic			
+	4184794294	Outro	STATES_MainMusic			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	125040558	MainMusic_Outro	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\MainMusic_Outro_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Outro\MainMusic_Outro\MainMusic_Outro		2425328
+	166315582	Pad 1_Level_03	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pad 1_Level_03_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_03\Level_03\Pad 1_Level_03		4547432
+	200488258	AtlasStartup	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\AtlasStartup_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Intro\AtlasStartup\AtlasStartup		2121852
+	251338671	Pluck 2_Level_03	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 2_Level_03_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_03\Level_03\Pluck 2_Level_03		4547432
+	295965216	Pluck 3_Level_03	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 3_Level_03_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_03\Level_03\Pluck 3_Level_03		4547432
+	379733451	Pluck 1_Level_02	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 1_Level_02_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_02\Level_02\Pluck 1_Level_02		4547432
+	517038707	Pluck 1_Level_01	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 1_Level_01_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_01\Level_01_00\Pluck 1_Level_01		4244276
+	562753340	MusicMain_Level_00	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\MusicMain_Level_00_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_00\MusicMain_Level_00\MusicMain_Level_00		12732696
+	734656550	Lead 1_Level_03	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Lead 1_Level_03_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_03\Level_03\Lead 1_Level_03		4547432
+	778681510	New Music Track	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Jingle_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Intro\AtlasStartup\New Music Track		1064532
+	921847646	Pluck 1_Level_03	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 1_Level_03_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_03\Level_03\Pluck 1_Level_03		4547432
+	982259369	Pluck 3_Level_02	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 3_Level_02_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_02\Level_02\Pluck 3_Level_02		4547432
+	988947467	Pluck 2_Level_02	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 2_Level_02_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_02\Level_02\Pluck 2_Level_02		4547432
+	1061006421	Pluck 2_Level_01	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Music\Pluck 2_Level_01_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MainMusic\Level_01\Level_01_00\Pluck 2_Level_01		4244276
+

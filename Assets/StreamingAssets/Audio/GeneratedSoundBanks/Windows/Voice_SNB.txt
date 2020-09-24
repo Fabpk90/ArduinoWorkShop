@@ -1,0 +1,64 @@
+Event	ID	Name			Wwise Object Path	Notes
+	151885851	Tutorial_02_VO_CityAppear_FirstPlayer			\EVENTS_VOICE\Tutorial_02_VO_CityAppear_FirstPlayer	
+	384139574	Tutorial_05_VO_3rdCity			\EVENTS_VOICE\Tutorial_05_VO_3rdCity	
+	1909394740	Tutorial_06_VO_CityDisappear_Bis			\EVENTS_VOICE\Tutorial_06_VO_CityDisappear_Bis	
+	2641330994	Tutorial_04_VO_Player2			\EVENTS_VOICE\Tutorial_04_VO_Player2	
+	2650081591	Tutorial_06_VO_CityDisappear			\EVENTS_VOICE\Tutorial_06_VO_CityDisappear	
+	2899691264	Tutorial_02_VO_CityAppear_FirstPlayer_Bis			\EVENTS_VOICE\Tutorial_02_VO_CityAppear_FirstPlayer_Bis	
+	3143663089	Tutorial_05_VO_3rdCity_Bis			\EVENTS_VOICE\Tutorial_05_VO_3rdCity_Bis	
+	3180082586	Tutorial_01_VO_Start			\EVENTS_VOICE\Tutorial_01_VO_Start	
+	3267117598	Tutorial_08_VO_NewTrip			\EVENTS_VOICE\Tutorial_08_VO_NewTrip	
+	3319231873	Tutorial_03_VO_2ndCity			\EVENTS_VOICE\Tutorial_03_VO_2ndCity	
+	3354144807	Tutorial_02_VO_CityAppear			\EVENTS_VOICE\Tutorial_02_VO_CityAppear	
+	3793222322	Tutorial_03_VO_2ndCity_Bis			\EVENTS_VOICE\Tutorial_03_VO_2ndCity_Bis	
+	3840607029	Tutorial_04_VO_Player2_Bis			\EVENTS_VOICE\Tutorial_04_VO_Player2_Bis	
+	4170801657	Tutorial_07_VO_Endgame			\EVENTS_VOICE\Tutorial_07_VO_Endgame	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1069431850	Player			\STATES_Voices\Player	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Player			
+	2188949036	Player2	Player			
+	2188949039	Player1	Player			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	22648739	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\05_VO_3rdCity		
+	73021990	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\03_VO_2ndCity_Bis		
+	82208345	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\04_VO_Player2_Bis		
+	92193497	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\06_VO_CityDisappear		
+	127473086	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\03_VO_2ndCity		
+	138085455	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\05_VO_3rdCity_Bis		
+	236111106	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\04_VO_Player2		
+	341892947	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice		
+	378094817	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\03_VO_2ndCity		
+	480723484	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\05_VO_3rdCity_Bis		
+	515772631	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\02_VO_CityAppear_FirstPlayer_Bis		
+	547870406	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\04_VO_Player2_Bis		
+	588364312	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\05_VO_3rdCity		
+	626172014	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\03_VO_2ndCity_Bis		
+	690055002	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\04_VO_Player2		
+	698684419	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\02_VO_CityAppear_FirstPlayer		
+	699560566	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\06_VO_CityDisappear_Bis		
+	739166173	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice		
+	789926145	Player2	Player	\Actor-Mixer Hierarchy\Voice\Voice\06_VO_CityDisappear_Bis		
+	907150369	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\02_VO_CityAppear_FirstPlayer_Bis		
+	982477499	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\06_VO_CityDisappear		
+	1021013503	Player1	Player	\Actor-Mixer Hierarchy\Voice\Voice\02_VO_CityAppear_FirstPlayer		
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	20723910	Vocal_06bis	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_06bis_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\06_VO_CityDisappear_Bis\Vocal_06bis		1018108
+	27146739	Vocal_05bis	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_05bis_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\05_VO_3rdCity_Bis\Vocal_05bis		579912
+	54914236	Vocal_07	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_07_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\07_VO_Endgame\Vocal_07		1359012
+	69482134	Vocal_021	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_021_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\02_VO_CityAppear_FirstPlayer\Vocal_021		1842020
+	96148563	Vocal_03	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_03_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\03_VO_2ndCity\Vocal_03		1421944
+	302918289	Vocal_08	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_08_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\08_VO_NewTrip\Vocal_08		2165824
+	326207761	Vocal_06	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_06_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\06_VO_CityDisappear\Vocal_06		2109412
+	567025223	Vocal_03bis	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_03bis_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\03_VO_2ndCity_Bis\Vocal_03bis		966952
+	722432988	Vocal_02bis	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_02bis_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\02_VO_CityAppear_FirstPlayer_Bis\Vocal_02bis		792956
+	779913207	Vocal_04	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_04_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\04_VO_Player2\Vocal_04		760444
+	798193555	Vocal_05	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_05_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\05_VO_3rdCity\Vocal_05		840780
+	835434195	Vocal_02	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_02_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\02_VO_CityAppear\Vocal_02		1631380
+	906027255	Vocal_04bis	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_04bis_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\04_VO_Player2_Bis\Vocal_04bis		813348
+	979148771	Vocal_01	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Voices\Vocal_01_10C4C929.wem		\Actor-Mixer Hierarchy\Voice\Voice\01_VO_Start\Vocal_01		3365484
+

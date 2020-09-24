@@ -1,0 +1,38 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1060073154	Feedback_Positive			\EVENTS_FEEDBACK\Feedback_Positive	
+	1674175042	Feedback_Negative			\EVENTS_FEEDBACK\Feedback_Negative	
+	2237171361	Feedback_Start			\EVENTS_FEEDBACK\Feedback_Start	
+	2724060804	Feedback_FinalCity			\EVENTS_FEEDBACK\Feedback_FinalCity	
+	3112385860	Feedback_Neutre			\EVENTS_FEEDBACK\Feedback_Neutre	
+	3783047696	Feedback_Apparition			\EVENTS_FEEDBACK\Feedback_Apparition	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1069431850	Player			\STATES_Voices\Player	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Player			
+	2188949036	Player2	Player			
+	2188949039	Player1	Player			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	106346608	Player1	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_FinalCity		
+	170633795	Player1	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Apparition		
+	287814959	Player1	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Positive		
+	600283536	Player2	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_FinalCity		
+	656318318	Player1	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Neutre		
+	702253996	Player2	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Start		
+	714521582	Player1	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Start		
+	756766122	Player2	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Apparition		
+	892476741	Player2	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Neutre		
+	930036346	Player1	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Negative		
+	931699763	Player2	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Negative		
+	998543559	Player2	Player	\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Positive		
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	294160640	Feedback_Apparition	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Feedbacks\Feedback_Apparition_10C4C929.wem		\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Apparition\Feedback_Apparition		667824
+	591248741	Feedback_Start	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Feedbacks\Feedback_Start_10C4C929.wem		\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Start\Feedback_Start		866496
+	746781494	Feedback_Neutre	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Feedbacks\Feedback_Neutre_10C4C929.wem		\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Neutre\Feedback_Neutre		502228
+	928965243	Feedback_Negative	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Feedbacks\Feedback_Negative_10C4C929.wem		\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Negative\Feedback_Negative		646764
+	1034269024	Feedback_Positive	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Feedbacks\Feedback_Positive_10C4C929.wem		\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_Positive\Feedback_Positive		803620
+	1059008163	Feedback_FinalCity	D:\Documents\- ENJMIN\- M2\Projets\Atlas\Repo Wwise\AtlasWwise\WwiseProjectAtlas\.cache\Windows\SFX\Feedbacks\Feedback_FinalCity_10C4C929.wem		\Actor-Mixer Hierarchy\Feedback\Feedback\Feedback_FinalCity\Feedback_FinalCity		1549372
+
