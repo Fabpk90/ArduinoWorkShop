@@ -71,27 +71,37 @@ public class ArduinoTest : MonoBehaviour
     public void SetCityState(int index, ECityState state)
     {
         Debug.Log("Index " + index + " is set to" + state);
-        _cityStates[index] = state;
-
-        if (state == ECityState.Plugged)
+        if (ECityState.Plugged == _cityStates[index] && state == ECityState.Available)
         {
-            if (cableInPlugs == null)
+            cableInPlugs = null;
+            
+            _cityStates[index] = ECityState.Available;
+            Debug.Log("UnPlugged");
+        }
+        else
+        {
+            _cityStates[index] = state;
+
+            if (state == ECityState.Plugged)
             {
-                cableInPlugs = new Tuple<int, int>(index, -1);
-                OnWirePlugged?.Invoke(this , index);
-            }
-            else
-            {
-                Debug.Log("Index " + index + " is set to" + ECityState.Connected);
-                int index0 = cableInPlugs.Item1;
-                cableInPlugs = new Tuple<int, int>(index0, index);
+                if (cableInPlugs == null)
+                {
+                    cableInPlugs = new Tuple<int, int>(index, -1);
+                    OnWirePlugged?.Invoke(this , index);
+                }
+                else
+                {
+                    Debug.Log("Index " + index + " is set to" + ECityState.Connected);
+                    int index0 = cableInPlugs.Item1;
+                    cableInPlugs = new Tuple<int, int>(index0, index);
                 
-                _cityStates[index] = ECityState.Connected;
-                _cityStates[index0] = ECityState.Connected;
+                    _cityStates[index] = ECityState.Connected;
+                    _cityStates[index0] = ECityState.Connected;
                 
-                cables.Add(cableInPlugs);
-                OnWireConnected?.Invoke(this, cableInPlugs);
-                cableInPlugs = null;
+                    cables.Add(cableInPlugs);
+                    OnWireConnected?.Invoke(this, cableInPlugs);
+                    cableInPlugs = null;
+                }
             }
         }
     }

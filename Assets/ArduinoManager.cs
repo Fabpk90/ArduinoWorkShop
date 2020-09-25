@@ -46,6 +46,11 @@ public class ArduinoManager : MonoBehaviour
     void Start()
     {
         OnGameStart?.Invoke(this, null);
+
+        OnGameWin += (sender, args) =>
+        {
+            print("T'as gagné, t'es trop fort !");
+        };
         
         allCities = new List<City>();
 
@@ -109,6 +114,18 @@ public class ArduinoManager : MonoBehaviour
         arduinoA.OnWireDisconnected += (sender, i) =>
         {
             print("disconnected " + i);
+
+            foreach (int city in allCities[i].cities)
+            {
+                print("City state " + arduinoA._cityStates[city] +" " + city);
+                if (arduinoA._cityStates[city] == ECityState.Available 
+                    && city != startingIndex && city != endIndex)
+                {
+                    print("City shuting down " + city);
+                    arduinoA._cityStates[city] = ECityState.Dead;
+                    arduinoA.serial.SendSerialMessage("D"+city);
+                }
+            }
         };
         
         arduinoB.OnWireFriendlyPlugged += (sender, i) =>
@@ -144,12 +161,12 @@ public class ArduinoManager : MonoBehaviour
             foreach (int city in allCities[i].cities)
             {
                 //not already connected
-                if (allCities[city].state != ECityState.Available
-                    && city != i)
+                if (arduinoB._cityStates[city] == ECityState.Available 
+                    && city != startingIndex && city != endIndex)
                 {
-                    print("Sending " + city);
-                    arduinoB.serial.SendSerialMessage("A" + city);
-                    arduinoB._cityStates[city] = ECityState.Available;
+                    print("City shuting down " + city);
+                    arduinoB._cityStates[city] = ECityState.Dead;
+                    arduinoB.serial.SendSerialMessage("D"+city);
                 }
             }
         };
@@ -157,7 +174,18 @@ public class ArduinoManager : MonoBehaviour
         arduinoB.OnWireDisconnected += (sender, i) =>
         {
             print("disconnected " + i);
-            arduinoB.serial.SendSerialMessage("D"+i);
+            
+            foreach (int city in allCities[i].cities)
+            {
+                if (arduinoB._cities[city].state == ECityState.Available
+                    && (city != startingIndex && city != endIndex))
+                {
+                    var aCity = arduinoB._cities[city];
+                    aCity.state = ECityState.Dead;
+                    arduinoB._cities[city] = aCity;
+                    arduinoB.serial.SendSerialMessage("D"+city);
+                }
+            }
         };
         
         adjacencyMatrix = new int[allCities.Count, allCities.Count];
@@ -248,7 +276,6 @@ public class ArduinoManager : MonoBehaviour
     {
         if(allCities[endIndex].state == ECityState.Connected)
         {
-            print("T'as gagné, t'es trop fort !");
             OnGameWin?.Invoke(this, null);
         }
     }
@@ -276,9 +303,9 @@ public class ArduinoManager : MonoBehaviour
         {
             if (arduino.isCityPlugged(index))
             {
-                arduino.OnWireDisconnected?.Invoke(this, index);
                 //TODO: see if the city really available
                 arduino.SetCityState(index, ECityState.Available);
+                arduino.OnWireDisconnected?.Invoke(this, index);
             }
             else if (arduino.isCityAvailable(index))
             {
