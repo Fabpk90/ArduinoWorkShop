@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ELE5d5b9c842bce2\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ELE5d5b9c842bce2\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ArduinoWorkShop.419569030.00" t="ExcludeRecursive" />
-    <e p="C:\Users\ELE5d5b9c842bce2\Desktop\UnityProjects\ArduinoWorkShop" t="IncludeRecursive">
+    <e p="C:\Users\fab\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\fab\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ArduinoWorkShop.786749510.00" t="ExcludeRecursive" />
+    <e p="C:\Users\fab\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
+    <e p="F:\UnityProject\ArduinoWorkShop" t="IncludeRecursive">
       <e p="ArduinoWorkShop.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />

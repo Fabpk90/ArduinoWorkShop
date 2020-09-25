@@ -53,8 +53,7 @@ public class ArduinoManager : MonoBehaviour
         arduinoA.OnMsgReceived += OnMessageReceived;
         arduinoB.OnMsgReceived += OnMessageReceived;
 
-        arduinoA.OnConnected += ChooseStartingCities;
-        arduinoB.OnConnected += ChooseStartingCities;
+        
 
         arduinoA.OnWireConnected += (sender, tuple) =>
         {
@@ -119,6 +118,13 @@ public class ArduinoManager : MonoBehaviour
         
         adjacencyMatrix = new int[allCities.Count, allCities.Count];
         ComputeAdjacency();
+        ChooseRandomCities();
+        
+        arduinoA.serial.SendSerialMessage("S");
+        arduinoA.serial.SendSerialMessage("Z" + startingIndex);
+        arduinoA.serial.SendSerialMessage("Z" + endIndex);
+        
+        arduinoB.serial.SendSerialMessage("S");
     }
 
     private void ChooseRandomCities()
@@ -261,7 +267,5 @@ public class ArduinoManager : MonoBehaviour
         arduinoA.OnMsgReceived -= OnMessageReceived;
         arduinoB.OnMsgReceived -= OnMessageReceived;
         
-        arduinoA.OnConnected -= ChooseStartingCities;
-        arduinoB.OnConnected -= ChooseStartingCities;
     }
 }

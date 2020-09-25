@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d8aa73-061e-49e6-88e4-9a996221ae61" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ArduinoWorkShop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArduinoWorkShop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArduinoManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArduinoManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +30,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/731A2A5A-918C-4C46-9DA9-A4D2DF1FBD9B/f7/c4c4a336/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/731A2A5A-918C-4C46-9DA9-A4D2DF1FBD9B/51/c7015c33/Queue.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,6 +83,7 @@
       <updated>1600849121679</updated>
       <workItem from="1600849127454" duration="20202000" />
       <workItem from="1600951554478" duration="6371000" />
+      <workItem from="1600975289669" duration="856000" />
     </task>
     <servers />
   </component>
@@ -192,15 +190,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ArduinoManager.cs</url>
-          <line>141</line>
-          <properties documentPath="C:\Users\ELE5d5b9c842bce2\Desktop\UnityProjects\ArduinoWorkShop\Assets\ArduinoManager.cs" initialLine="74">
-            <startOffsets>
-              <option value="3932" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4016" />
-            </endOffsets>
-          </properties>
+          <line>147</line>
+          <properties documentPath="C:\Users\ELE5d5b9c842bce2\Desktop\UnityProjects\ArduinoWorkShop\Assets\ArduinoManager.cs" initialLine="74" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
