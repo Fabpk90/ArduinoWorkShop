@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd52410c09966474aadb772423abd930, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  deadList: 
+  deadListA: 000000000000000000000000000000000000000000000000
+  deadListB: 000000000000000000000000000000000000000000000000
