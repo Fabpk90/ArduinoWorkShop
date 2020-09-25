@@ -23,6 +23,9 @@
 							<Path>SFX\Voices\Vocal_01_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="748895195" Name="None" ObjectPath="\States\STATES_Voices\Player\None"/>
+					</ActionSetState>
 					<AuxBusSends>
 						<AuxBus Id="1364690296" Name="Voice_Player1" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player1"/>
 						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
@@ -35,28 +38,20 @@
 							<Path>SFX\Voices\Vocal_02_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<AuxBusSends>
-						<AuxBus Id="1364690296" Name="Voice_Player1" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player1"/>
-						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
-					</AuxBusSends>
-				</Event>
-				<Event Id="151885851" Name="Tutorial_02_VO_CityAppear_FirstPlayer" ObjectPath="\Events\EVENTS_VOICE\Tutorial_02_VO_CityAppear_FirstPlayer" DurationType="OneShot" DurationMin="9.593521" DurationMax="9.593521">
-					<IncludedMemoryFiles>
-						<File Id="69482134" Language="SFX">
-							<ShortName>Voices\Vocal_021.wav</ShortName>
-							<Path>SFX\Voices\Vocal_021_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
 					<ActionSetState>
-						<ActionSetStateEntry Id="2188949039" Name="Player1" ObjectPath="\States\STATES_Voices\Player\Player1"/>
+						<ActionSetStateEntry Id="748895195" Name="None" ObjectPath="\States\STATES_Voices\Player\None"/>
 					</ActionSetState>
 					<AuxBusSends>
 						<AuxBus Id="1364690296" Name="Voice_Player1" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player1"/>
 						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="2899691264" Name="Tutorial_02_VO_CityAppear_FirstPlayer_Bis" ObjectPath="\Events\EVENTS_VOICE\Tutorial_02_VO_CityAppear_FirstPlayer_Bis" DurationType="OneShot" DurationMin="4.129646" DurationMax="4.129646">
+				<Event Id="151885851" Name="Tutorial_02_VO_CityAppear_FirstPlayer" ObjectPath="\Events\EVENTS_VOICE\Tutorial_02_VO_CityAppear_FirstPlayer" DurationType="OneShot" DurationMin="4.129646" DurationMax="9.593521">
 					<IncludedMemoryFiles>
+						<File Id="69482134" Language="SFX">
+							<ShortName>Voices\Vocal_021.wav</ShortName>
+							<Path>SFX\Voices\Vocal_021_10C4C929.wem</Path>
+						</File>
 						<File Id="722432988" Language="SFX">
 							<ShortName>Voices\Vocal_02bis.wav</ShortName>
 							<Path>SFX\Voices\Vocal_02bis_10C4C929.wem</Path>
@@ -70,23 +65,12 @@
 						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="3319231873" Name="Tutorial_03_VO_2ndCity" ObjectPath="\Events\EVENTS_VOICE\Tutorial_03_VO_2ndCity" DurationType="OneShot" DurationMin="7.405625" DurationMax="7.405625">
+				<Event Id="3319231873" Name="Tutorial_03_VO_2ndCity" ObjectPath="\Events\EVENTS_VOICE\Tutorial_03_VO_2ndCity" DurationType="OneShot" DurationMin="5.035875" DurationMax="7.405625">
 					<IncludedMemoryFiles>
 						<File Id="96148563" Language="SFX">
 							<ShortName>Voices\Vocal_03.wav</ShortName>
 							<Path>SFX\Voices\Vocal_03_10C4C929.wem</Path>
 						</File>
-					</IncludedMemoryFiles>
-					<ActionSetState>
-						<ActionSetStateEntry Id="2188949039" Name="Player1" ObjectPath="\States\STATES_Voices\Player\Player1"/>
-					</ActionSetState>
-					<AuxBusSends>
-						<AuxBus Id="1364690296" Name="Voice_Player1" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player1"/>
-						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
-					</AuxBusSends>
-				</Event>
-				<Event Id="3793222322" Name="Tutorial_03_VO_2ndCity_Bis" ObjectPath="\Events\EVENTS_VOICE\Tutorial_03_VO_2ndCity_Bis" DurationType="OneShot" DurationMin="5.035875" DurationMax="5.035875">
-					<IncludedMemoryFiles>
 						<File Id="567025223" Language="SFX">
 							<ShortName>Voices\Vocal_03bis.wav</ShortName>
 							<Path>SFX\Voices\Vocal_03bis_10C4C929.wem</Path>
@@ -100,23 +84,12 @@
 						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="2641330994" Name="Tutorial_04_VO_Player2" ObjectPath="\Events\EVENTS_VOICE\Tutorial_04_VO_Player2" DurationType="OneShot" DurationMin="3.960313" DurationMax="3.960313">
+				<Event Id="2641330994" Name="Tutorial_04_VO_Player2" ObjectPath="\Events\EVENTS_VOICE\Tutorial_04_VO_Player2" DurationType="OneShot" DurationMin="3.960313" DurationMax="4.235854">
 					<IncludedMemoryFiles>
 						<File Id="779913207" Language="SFX">
 							<ShortName>Voices\Vocal_04.wav</ShortName>
 							<Path>SFX\Voices\Vocal_04_10C4C929.wem</Path>
 						</File>
-					</IncludedMemoryFiles>
-					<ActionSetState>
-						<ActionSetStateEntry Id="2188949036" Name="Player2" ObjectPath="\States\STATES_Voices\Player\Player2"/>
-					</ActionSetState>
-					<AuxBusSends>
-						<AuxBus Id="1364690296" Name="Voice_Player1" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player1"/>
-						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
-					</AuxBusSends>
-				</Event>
-				<Event Id="3840607029" Name="Tutorial_04_VO_Player2_Bis" ObjectPath="\Events\EVENTS_VOICE\Tutorial_04_VO_Player2_Bis" DurationType="OneShot" DurationMin="4.235854" DurationMax="4.235854">
-					<IncludedMemoryFiles>
 						<File Id="906027255" Language="SFX">
 							<ShortName>Voices\Vocal_04bis.wav</ShortName>
 							<Path>SFX\Voices\Vocal_04bis_10C4C929.wem</Path>
@@ -130,8 +103,12 @@
 						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="384139574" Name="Tutorial_05_VO_3rdCity" ObjectPath="\Events\EVENTS_VOICE\Tutorial_05_VO_3rdCity" DurationType="OneShot" DurationMin="4.378729" DurationMax="4.378729">
+				<Event Id="384139574" Name="Tutorial_05_VO_3rdCity" ObjectPath="\Events\EVENTS_VOICE\Tutorial_05_VO_3rdCity" DurationType="OneShot" DurationMin="3.020042" DurationMax="4.378729">
 					<IncludedMemoryFiles>
+						<File Id="27146739" Language="SFX">
+							<ShortName>Voices\Vocal_05bis.wav</ShortName>
+							<Path>SFX\Voices\Vocal_05bis_10C4C929.wem</Path>
+						</File>
 						<File Id="798193555" Language="SFX">
 							<ShortName>Voices\Vocal_05.wav</ShortName>
 							<Path>SFX\Voices\Vocal_05_10C4C929.wem</Path>
@@ -145,15 +122,15 @@
 						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="3143663089" Name="Tutorial_05_VO_3rdCity_Bis" ObjectPath="\Events\EVENTS_VOICE\Tutorial_05_VO_3rdCity_Bis" DurationType="OneShot" DurationMin="3.020042" DurationMax="3.020042">
+				<Event Id="1466376345" Name="Tutorial_06_VO_CityDestroyed" ObjectPath="\Events\EVENTS_VOICE\Tutorial_06_VO_CityDestroyed" DurationType="OneShot" DurationMin="5.302312" DurationMax="5.302312">
 					<IncludedMemoryFiles>
-						<File Id="27146739" Language="SFX">
-							<ShortName>Voices\Vocal_05bis.wav</ShortName>
-							<Path>SFX\Voices\Vocal_05bis_10C4C929.wem</Path>
+						<File Id="20723910" Language="SFX">
+							<ShortName>Voices\Vocal_06bis.wav</ShortName>
+							<Path>SFX\Voices\Vocal_06bis_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<ActionSetState>
-						<ActionSetStateEntry Id="2188949036" Name="Player2" ObjectPath="\States\STATES_Voices\Player\Player2"/>
+						<ActionSetStateEntry Id="748895195" Name="None" ObjectPath="\States\STATES_Voices\Player\None"/>
 					</ActionSetState>
 					<AuxBusSends>
 						<AuxBus Id="1364690296" Name="Voice_Player1" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player1"/>
@@ -165,21 +142,6 @@
 						<File Id="326207761" Language="SFX">
 							<ShortName>Voices\Vocal_06.wav</ShortName>
 							<Path>SFX\Voices\Vocal_06_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-					<ActionSetState>
-						<ActionSetStateEntry Id="748895195" Name="None" ObjectPath="\States\STATES_Voices\Player\None"/>
-					</ActionSetState>
-					<AuxBusSends>
-						<AuxBus Id="1364690296" Name="Voice_Player1" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player1"/>
-						<AuxBus Id="1364690299" Name="Voice_Player2" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Voice\Voice_Player2"/>
-					</AuxBusSends>
-				</Event>
-				<Event Id="1909394740" Name="Tutorial_06_VO_CityDisappear_Bis" ObjectPath="\Events\EVENTS_VOICE\Tutorial_06_VO_CityDisappear_Bis" DurationType="OneShot" DurationMin="5.302312" DurationMax="5.302312">
-					<IncludedMemoryFiles>
-						<File Id="20723910" Language="SFX">
-							<ShortName>Voices\Vocal_06bis.wav</ShortName>
-							<Path>SFX\Voices\Vocal_06bis_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<ActionSetState>

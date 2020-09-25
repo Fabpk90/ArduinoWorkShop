@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc2261b51bba57468056b52ff0b3191, type: 3}
+  m_Name: 8EE2E1AA-DE9D-4A8D-AB28-5AA28CCA7B13
+  m_EditorClassIdentifier: 
+  objectName: Tutorial_05_VO_3rdCity
+  id: 384139574
+  guid: 8EE2E1AA-DE9D-4A8D-AB28-5AA28CCA7B13

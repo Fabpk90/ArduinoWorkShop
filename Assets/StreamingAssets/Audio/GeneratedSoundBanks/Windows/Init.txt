@@ -28,6 +28,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	2570641199	SFX_Player1			\Default Work Unit\Master Audio Bus\Feedback\SFX_Player1	
 
 Audio Devices	ID	Name	Type				Notes
+	1334442663	Controller_Speaker	Controller Speaker			
 	2317455096	No_Output	No Output			
 	3859886410	System	System			
 

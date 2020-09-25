@@ -473,6 +473,134 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Music_Main.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 540731a816ce73e438789e216db91eb9, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Feedback_Apparition.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e04c24bff2ca04d4bba1e701ebdef1d9, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Feedback_FinalCity.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 74e968d6a5acfed4ea2d7cf63e5c89ac, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Feedback_Negative.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ca1f0f03cfd4ca4f9887ed8267da313, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Feedback_Neutre.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e4f73e477e6cd314b87cd57b80d521c9, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Feedback_Positive.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: bb7b330f6b2b7f74aa6c37743e99da2d, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Feedback_Start.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ca2ae3e5dcd1594596a22de6e06c3a6, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_01_VO_Start.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 18b350e1a78b78f4a811d40f82ac5efd, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_02_VO_CityAppear.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f297683332cf2e4a92ea3619d2a8d2f, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_02_VO_CityAppear_FirstPlayer.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 563e1f6b0f53f9e4789d8a4e50897a94, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_02_VO_CityAppear_FirstPlayer_Bis.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_03_VO_2ndCity.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bd935540ebaee5479eb37ac87cf3b7a, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_03_VO_2ndCity_Bis.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_04_VO_Player2.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d4144b308780a0d41b96805df3bb9586, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_04_VO_Player2_Bis.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_05_VO_3rdCity.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ccc6a1c82491b744a0edfd49b6c1995, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_05_VO_3rdCity_Bis.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_06_VO_CityDisappear.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f9ad7cf6b82e6e44b5502e8415366fd, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_06_VO_CityDisappear_Bis.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 136d4eee7eb69ca48a94f7f09b0ba58c, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_07_VO_Endgame.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d90daa907a78fd044bfabe3d2ca53fed, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_08_VO_NewTrip.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 110a3c8c8cc8a9747be8e15a770e6a39, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_CityDestroyeds.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 136d4eee7eb69ca48a94f7f09b0ba58c, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 18b350e1a78b78f4a811d40f82ac5efd, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[1].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f297683332cf2e4a92ea3619d2a8d2f, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[2].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 563e1f6b0f53f9e4789d8a4e50897a94, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[3].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bd935540ebaee5479eb37ac87cf3b7a, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[4].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d4144b308780a0d41b96805df3bb9586, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[5].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ccc6a1c82491b744a0edfd49b6c1995, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[6].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f9ad7cf6b82e6e44b5502e8415366fd, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[7].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d90daa907a78fd044bfabe3d2ca53fed, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: tutorialLogs.Array.data[8].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 110a3c8c8cc8a9747be8e15a770e6a39, type: 2}
     - target: {fileID: 7928233922154134285, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
