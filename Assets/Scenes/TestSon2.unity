@@ -245,9 +245,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1636173413}
   - component: {fileID: 1636173412}
-  - component: {fileID: 1636173411}
-  - component: {fileID: 1636173415}
-  - component: {fileID: 1636173414}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -255,30 +252,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1636173411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636173410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4e815aae85cc24dbb5638a9df62e9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6307e3e2a8d290e4d8468dd573e2bfe8, type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &1636173412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,57 +292,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1636173414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636173410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8479cfd27f11ac34b90c34b2423db4c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3ca2ae3e5dcd1594596a22de6e06c3a6, type: 2}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
---- !u!114 &1636173415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636173410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6c5187bbafd714ebedae4005315514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!1 &1766635566
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
       propertyPath: tutorialLogs.Array.size
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
       propertyPath: Music_Main.WwiseObjectReference
@@ -599,6 +521,18 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d90daa907a78fd044bfabe3d2ca53fed, type: 2}
     - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
       propertyPath: tutorialLogs.Array.data[8].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 110a3c8c8cc8a9747be8e15a770e6a39, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: Tutorial_CityDestroyed.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 136d4eee7eb69ca48a94f7f09b0ba58c, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: VO_EndOfTrip.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d90daa907a78fd044bfabe3d2ca53fed, type: 2}
+    - target: {fileID: 7928233922154134284, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}
+      propertyPath: VO_NewTrip.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 110a3c8c8cc8a9747be8e15a770e6a39, type: 2}
     - target: {fileID: 7928233922154134285, guid: 85af0da82ecbfdb41b71fa140c3d3f6d, type: 3}

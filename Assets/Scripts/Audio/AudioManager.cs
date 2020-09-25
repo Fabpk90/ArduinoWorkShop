@@ -11,9 +11,18 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event Feedback_Neutre;
     public AK.Wwise.Event Feedback_Positive;
     public AK.Wwise.Event Feedback_Start;
-    public AK.Wwise.Event Tutorial_CityDestroyeds;
 
+    [Space]
+    public AK.Wwise.Event Tutorial_CityDestroyed;
+    public AK.Wwise.Event VO_EndOfTrip;
+    public AK.Wwise.Event VO_NewTrip;
+
+    [Space]
     public AK.Wwise.Event[] tutorialLogs;
+
+    public Dictionary<AK.Wwise.Event, bool> emittedLog = new Dictionary<AK.Wwise.Event, bool>();
+
+    private bool[] logEmitted;
 
     private int tutoStepCounter;
 
@@ -27,15 +36,36 @@ public class AudioManager : MonoBehaviour
             instance = this;
 
         tutoStepCounter = 0;
+
+        logEmitted = new bool[tutorialLogs.Length];
+
+        /*
+        foreach (AK.Wwise.Event wwiseEvent in tutorialLogs)
+        {
+            emittedLog.Add(wwiseEvent, false);
+        }
+        */
     }
 
-    public void IncLogCounter()
-    {
-        tutoStepCounter++;
-    }
+    public void IncLogCounter() => tutoStepCounter++;
+
+    public void ResetLogCounter() => tutoStepCounter = 0;
 
     public void TriggerVoice()
     {
-        tutorialLogs[tutoStepCounter].Post(gameObject);
+        if (!logEmitted[tutoStepCounter])
+        {
+            tutorialLogs[tutoStepCounter].Post(gameObject);
+            logEmitted[tutoStepCounter] = true;
+        }
+
+        /*
+        bool containValue = emittedLog.TryGetValue(tutorialLogs[tutoStepCounter], out bool hasBeenEmitted);
+        if (!hasBeenEmitted && containValue)
+        {
+            tutorialLogs[tutoStepCounter].Post(gameObject);
+            emittedLog[tutorialLogs[tutoStepCounter]] = true;
+        }
+        */
     }
 }
