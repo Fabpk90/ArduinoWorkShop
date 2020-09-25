@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-struct City
+public struct City
 {
     public List<int> cities;
     string name;
@@ -33,12 +33,15 @@ public class ArduinoManager : MonoBehaviour
 
     private List<City> allCities;
 
-    private int startingIndex;
-    private int endIndex;
+    public int startingIndex;
+    public int endIndex;
 
     private int[,] adjacencyMatrix;
+    private int[] distances;
 
     public int numOfCables;
+
+    public int toSend;
 
     void Start()
     {
@@ -46,19 +49,35 @@ public class ArduinoManager : MonoBehaviour
         
         allCities = new List<City>();
 
-        allCities.Add(new City(new List<int>() { 1 }, "CityA", 0));
+        allCities.Add(new City(new List<int>() { 1, 3 }, "CityA", 0));
         allCities.Add(new City(new List<int>() { 0 }, "CityB", 0));
-        allCities.Add(new City(new List<int>() { 2 }, "CityC", 0));
+        allCities.Add(new City(new List<int>() { 3 }, "CityC", 0));
+        allCities.Add(new City(new List<int>() { 1 }, "CityC", 0));
+        allCities.Add(new City(new List<int>() { 0 }, "CityC", 0));
+        allCities.Add(new City(new List<int>() { 4 }, "CityC", 0));
+        
+        arduinoA.InitCities(allCities.ToArray());
+        arduinoB.InitCities(allCities.ToArray());
         
         arduinoA.OnMsgReceived += OnMessageReceived;
         arduinoB.OnMsgReceived += OnMessageReceived;
 
-        
-
         arduinoA.OnWireConnected += (sender, tuple) =>
         {
-            arduinoA.serial.SendSerialMessage("D" + tuple.Item1);
-            arduinoA.serial.SendSerialMessage("D" + tuple.Item2);
+            print("Wire connected for A " +tuple);
+            
+            arduinoA.serial.SendSerialMessage("C" + tuple.Item1);
+            arduinoA.serial.SendSerialMessage("C" + tuple.Item2);
+            
+            var city = allCities[tuple.Item1];
+            city.state = ECityState.Connected;
+            allCities[tuple.Item1] = city;
+            
+            city = allCities[tuple.Item2];
+            city.state = ECityState.Connected;
+            allCities[tuple.Item2] = city;
+            
+            CheckForWin();
         };
         
         arduinoA.OnWireFriendlyPlugged += (sender, i) =>
@@ -68,13 +87,18 @@ public class ArduinoManager : MonoBehaviour
 
         arduinoA.OnWirePlugged += (sender, i) =>
         {
-            arduinoA.indexPlugged = i;
+            print("Wire plugged for arduino A " + i);
+            print("Neighboors " +allCities[i].cities.Count);
             arduinoA.serial.SendSerialMessage("P" + i);
             foreach (int city in allCities[i].cities)
             {
-                if (allCities[city].state == ECityState.Available)
+                //not already connected
+                if (allCities[city].state != ECityState.Available
+                && city != i)
                 {
-                    arduinoA.serial.SendSerialMessage("A" + i);
+                    print("Sending " + city);
+                    arduinoA.serial.SendSerialMessage("A" + city);
+                    arduinoA._cityStates[city] = ECityState.Available;
                 }
             }
         };
@@ -91,21 +115,35 @@ public class ArduinoManager : MonoBehaviour
         
         arduinoB.OnWireConnected += (sender, tuple) =>
         {
-            arduinoB.serial.SendSerialMessage("D" + tuple.Item1);
-            arduinoB.serial.SendSerialMessage("D" + tuple.Item2);
+            print("Wire connected for B " +tuple);
+            arduinoB.serial.SendSerialMessage("C" + tuple.Item1);
+            arduinoB.serial.SendSerialMessage("C" + tuple.Item2);
+
+            var city = allCities[tuple.Item1];
+            city.state = ECityState.Connected;
+            allCities[tuple.Item1] = city;
+            
+            city = allCities[tuple.Item2];
+            city.state = ECityState.Connected;
+            allCities[tuple.Item2] = city;
+            
+            CheckForWin();
         };
         
         arduinoB.OnWirePlugged += (sender, i) =>
         {
+            print("Wire plugged for arduino B " + i);
+            print("Neighboors " +allCities[i].cities.Count);
             arduinoB.serial.SendSerialMessage("P" + i);
-            
-            //activate all adjacent cities
-
             foreach (int city in allCities[i].cities)
             {
-                if (allCities[city].state == ECityState.Available)
+                //not already connected
+                if (allCities[city].state != ECityState.Available
+                    && city != i)
                 {
-                    arduinoA.serial.SendSerialMessage("A" + i);
+                    print("Sending " + city);
+                    arduinoB.serial.SendSerialMessage("A" + city);
+                    arduinoB._cityStates[city] = ECityState.Available;
                 }
             }
         };
@@ -119,21 +157,57 @@ public class ArduinoManager : MonoBehaviour
         adjacencyMatrix = new int[allCities.Count, allCities.Count];
         ComputeAdjacency();
         ChooseRandomCities();
+
+        arduinoA.OnConnected += (sender, controller) =>
+        {
+            controller.SendSerialMessage("S");
+            controller.SendSerialMessage("Z" + startingIndex);
+            controller.SendSerialMessage("Z" + endIndex);
+
+            arduinoA._cityStates[startingIndex] = ECityState.Available;
+            arduinoA._cityStates[endIndex] = ECityState.Available;
+        };
+
+        arduinoB.OnConnected += (sender, controller) =>
+        {
+            controller.SendSerialMessage("S");
+            
+            arduinoB._cityStates[startingIndex] = ECityState.Available;
+            arduinoB._cityStates[endIndex] = ECityState.Available;
+        };
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnMessageReceived(arduinoA, ""+startingIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            OnMessageReceived(arduinoA, ""+toSend);
+        }
         
-        arduinoA.serial.SendSerialMessage("S");
-        arduinoA.serial.SendSerialMessage("Z" + startingIndex);
-        arduinoA.serial.SendSerialMessage("Z" + endIndex);
-        
-        arduinoB.serial.SendSerialMessage("S");
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            OnMessageReceived(arduinoB, ""+toSend);
+        }
     }
 
     private void ChooseRandomCities()
     {
+        int distance = 0;
+        bool isPathPossible = false;
         do
         {
             startingIndex = (int) (Random.value * allCities.Count);
             endIndex = (int) (Random.value * allCities.Count);
-        } while (startingIndex == endIndex && ComputeDistance(startingIndex, endIndex) > numOfCables);
+            distance = ComputeDistance(startingIndex, endIndex);
+
+            isPathPossible = distances[endIndex] != int.MaxValue;
+
+        } while (startingIndex == endIndex || distance > numOfCables || distance < 3 || !isPathPossible);
 
         var city = allCities[startingIndex];
         city.state = ECityState.Available;
@@ -146,7 +220,7 @@ public class ArduinoManager : MonoBehaviour
 
     private int ComputeDistance(int startIndex, int endIndex)
     {
-        var distances = Dijkstra.DijkstraAlgo(adjacencyMatrix, startIndex, allCities.Count);
+        distances = Dijkstra.DijkstraAlgo(adjacencyMatrix, startIndex, allCities.Count);
         
         return distances[endIndex];
     }
@@ -238,8 +312,6 @@ public class ArduinoManager : MonoBehaviour
                 arduino.cables.Remove(c);
                 //available for this city and plugged for the other not connected
             }
-
-            CheckForWin();
         }
         else
         {
