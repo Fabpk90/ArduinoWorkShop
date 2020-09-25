@@ -79,16 +79,6 @@ public class ArduinoTest : MonoBehaviour
             {
                 cableInPlugs = new Tuple<int, int>(index, -1);
                 OnWirePlugged?.Invoke(this , index);
-
-                //TODO: change this ! It needs to be from the other arduino
-                foreach (Tuple<int,int> cable in cables)
-                {
-                    if (cable.Item2 == index)
-                    {
-                        OnWireFriendlyPlugged?.Invoke(this, index);
-                        return;
-                    }
-                }
             }
             else
             {
