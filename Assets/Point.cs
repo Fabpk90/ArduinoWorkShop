@@ -33,7 +33,7 @@ public class Point : MonoBehaviour
 				str += p.transform.name +",";
 			}
 			str = str.Remove(str.Length - 1);
-			str += "}, \"City_" + name + "\", 0))";
+			str += "}, \"City_" + name + "\", "+name+"));";
 			
 			Debug.Log(str);
 		}
