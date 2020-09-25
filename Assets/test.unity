@@ -154,7 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arduinoA: {fileID: 718798245}
   arduinoB: {fileID: 857588880}
-  numOfCables: 6
+  startingIndex: 0
+  endIndex: 0
+  numOfCables: 10
+  toSend: 0
 --- !u!4 &56619873
 Transform:
   m_ObjectHideFlags: 0
@@ -200,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serial: {fileID: 0}
+  _cityStates: 
   isArduinoA: 1
 --- !u!114 &718798246
 MonoBehaviour:
@@ -263,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serial: {fileID: 0}
+  _cityStates: 
   isArduinoA: 0
 --- !u!114 &857588881
 MonoBehaviour:
@@ -276,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fa308a116dfc84686c0e3587e8af48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM4
+  portName: COM5
   baudRate: 9600
   messageListener: {fileID: 857588879}
   reconnectionDelay: 1000

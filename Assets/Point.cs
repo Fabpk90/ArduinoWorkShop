@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 public class Point : MonoBehaviour
@@ -8,6 +7,9 @@ public class Point : MonoBehaviour
 	public static List<Point> points = new List<Point>();
 	public List<Point> connected = new List<Point>();
 	public PointManager manager;
+	public bool isDeadA = false;
+	public bool isDeadB = false;
+
 	private void OnEnable()
 	{
 		points.Add(this);
@@ -24,13 +26,15 @@ public class Point : MonoBehaviour
 	{
 		Connection();
 		if(Input.anyKeyDown){
-			string str = name+";";
+			//allCities.Add(new City(new List<int>() { 1 }, "CityA", 0));
+			string str = "allCities.Add(new City(new List<int>() {";
 			foreach (Point p in connected)
 			{
-				str += p.transform.name.Replace('(', ' ').Replace(')', ' ').Trim() + ";";
+				str += p.transform.name +",";
 			}
-
-			str.Remove(str.Length - 1);
+			str = str.Remove(str.Length - 1);
+			str += "}, \"City_" + name + "\", "+name+"));";
+			
 			Debug.Log(str);
 		}
 	}
@@ -47,7 +51,11 @@ public class Point : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.color = Color.red;
+		Gizmos.color = Color.green;
+		if (IsDead()){
+			Gizmos.color = isDeadA ? Color.cyan : Color.yellow; 
+		}
+		
 		Gizmos.DrawSphere(transform.position, 0.2f);
 
 		foreach (Point p in connected)
@@ -57,8 +65,12 @@ public class Point : MonoBehaviour
 
 	}
 
+	private bool IsDead(){
+		return isDeadA || isDeadB;
+	}
+
 	private bool CheckDistance(Point p){
 		float d = Vector3.Distance(transform.position, p.transform.position);
-		return d <= manager.cableLength && p != this;
+		return d <= manager.cableLength && p != this && !p.IsDead() && !IsDead();
 	}
 }

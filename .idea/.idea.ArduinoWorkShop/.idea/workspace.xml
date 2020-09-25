@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c8d8aa73-061e-49e6-88e4-9a996221ae61" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ArduinoWorkShop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArduinoWorkShop/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ArduinoWorkShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArduinoWorkShop/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArduinoManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArduinoManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/test.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/731A2A5A-918C-4C46-9DA9-A4D2DF1FBD9B/f7/c4c4a336/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/731A2A5A-918C-4C46-9DA9-A4D2DF1FBD9B/51/c7015c33/Queue.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -54,10 +60,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21420">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="21420" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -112,74 +118,74 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="673" y="166" key="#xdebugger.XInspectDialog/0.0.1536.824@0.0.1536.824" timestamp="1600852015325" />
-    <state width="461" height="464" key="DebuggerActiveHint" timestamp="1600939840720">
+    <state width="481" height="464" key="DebuggerActiveHint" timestamp="1601031565403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="461" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1600939840720" />
-    <state width="1493" height="288" key="GridCell.Tab.0.bottom" timestamp="1600951513879">
+    <state width="481" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1601031565403" />
+    <state width="1493" height="284" key="GridCell.Tab.0.bottom" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.0.center" timestamp="1600951513878">
+    <state width="1493" height="284" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.0.center" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600951513878" />
-    <state width="1493" height="288" key="GridCell.Tab.0.left" timestamp="1600951513878">
+    <state width="1493" height="284" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.0.left" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600951513878" />
-    <state width="1493" height="288" key="GridCell.Tab.0.right" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.0.right" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.1.bottom" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.1.center" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.1.center" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.1.left" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.1.left" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.1.right" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.1.right" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.2.bottom" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.2.bottom" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.2.center" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.2.center" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.2.left" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.2.left" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.2.right" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.2.right" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.3.bottom" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.3.bottom" timestamp="1601031900270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.3.center" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601031900270" />
+    <state width="1493" height="284" key="GridCell.Tab.3.center" timestamp="1601031900270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.3.left" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1601031900270" />
+    <state width="1493" height="284" key="GridCell.Tab.3.left" timestamp="1601031900269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
-    <state width="1493" height="288" key="GridCell.Tab.3.right" timestamp="1600951513879">
+    <state width="1493" height="284" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1601031900269" />
+    <state width="1493" height="284" key="GridCell.Tab.3.right" timestamp="1601031900270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1600951513879" />
+    <state width="1493" height="284" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1601031900270" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1600852006188">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -190,9 +196,29 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ArduinoManager.cs</url>
-          <line>147</line>
-          <properties documentPath="C:\Users\ELE5d5b9c842bce2\Desktop\UnityProjects\ArduinoWorkShop\Assets\ArduinoManager.cs" initialLine="74" />
-          <option name="timeStamp" value="5" />
+          <line>322</line>
+          <properties documentPath="C:\Users\ELE5d5b9c842bce2\Desktop\UnityProjects\ArduinoWorkShop\Assets\ArduinoManager.cs" initialLine="309">
+            <startOffsets>
+              <option value="11050" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11100" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ArduinoManager.cs</url>
+          <line>135</line>
+          <properties documentPath="C:\Users\ELE5d5b9c842bce2\Desktop\UnityProjects\ArduinoWorkShop\Assets\ArduinoManager.cs" initialLine="119">
+            <startOffsets>
+              <option value="4985" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5047" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

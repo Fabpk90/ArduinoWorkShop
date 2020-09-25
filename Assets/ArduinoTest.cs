@@ -15,11 +15,11 @@ public enum ECityState
 public class ArduinoTest : MonoBehaviour 
 {
     public SerialController serial;
-    private List<City> _cities;
-    private List<ECityState> _cityStates;
+    public List<City> _cities;
+    public List<ECityState> _cityStates;
 
     public List<Tuple<int, int>> cables;
-    private Tuple<int, int> cableInPlugs;
+    public Tuple<int, int> cableInPlugs;
 
     public bool isArduinoA;
 
@@ -33,23 +33,26 @@ public class ArduinoTest : MonoBehaviour
 
     public EventHandler<int> OnWireDisconnected;
 
-    public int indexPlugged = -1;
-
     private void Start() 
     {
         serial = GetComponent<SerialController>();
-        
-        _cityStates = new List<ECityState>();
-        for (int i = 0; i < 2; i++)
-        {
-            _cityStates.Add(ECityState.Available);
-        }
-        
+
         cables = new List<Tuple<int, int>>();
 
         cableInPlugs = null;
+    }
 
-        //cities.Add(new City());
+    public void InitCities(City[] cities)
+    {
+        _cities = new List<City>(cities.Length);
+        _cities.AddRange(cities);
+
+        _cityStates = new List<ECityState>(cities.Length);
+        
+        for (int i = 0; i < cities.Length; i++)
+        {
+            _cityStates.Add(ECityState.Dead);
+        }
     }
 
     public int GetPluggedCities()
@@ -68,33 +71,37 @@ public class ArduinoTest : MonoBehaviour
     public void SetCityState(int index, ECityState state)
     {
         Debug.Log("Index " + index + " is set to" + state);
-        _cityStates[index] = state;
-
-        if (state == ECityState.Plugged)
+        if (ECityState.Plugged == _cityStates[index] && state == ECityState.Available)
         {
-            if (cableInPlugs == null)
-            {
-                cableInPlugs = new Tuple<int, int>(index, -1);
-                OnWirePlugged?.Invoke(this , index);
+            cableInPlugs = null;
+            
+            _cityStates[index] = ECityState.Available;
+            Debug.Log("UnPlugged");
+        }
+        else
+        {
+            _cityStates[index] = state;
 
-                //TODO: change this ! It needs to be from the other arduino
-                foreach (Tuple<int,int> cable in cables)
-                {
-                    if (cable.Item2 == index)
-                    {
-                        OnWireFriendlyPlugged?.Invoke(this, index);
-                        return;
-                    }
-                }
-            }
-            else
+            if (state == ECityState.Plugged)
             {
-                int index0 = cableInPlugs.Item1;
-                cableInPlugs = new Tuple<int, int>(index0, index);
+                if (cableInPlugs == null)
+                {
+                    cableInPlugs = new Tuple<int, int>(index, -1);
+                    OnWirePlugged?.Invoke(this , index);
+                }
+                else
+                {
+                    Debug.Log("Index " + index + " is set to" + ECityState.Connected);
+                    int index0 = cableInPlugs.Item1;
+                    cableInPlugs = new Tuple<int, int>(index0, index);
                 
-                cables.Add(cableInPlugs);
-                OnWireConnected?.Invoke(this, cableInPlugs);
-                cableInPlugs = null;
+                    _cityStates[index] = ECityState.Connected;
+                    _cityStates[index0] = ECityState.Connected;
+                
+                    cables.Add(cableInPlugs);
+                    OnWireConnected?.Invoke(this, cableInPlugs);
+                    cableInPlugs = null;
+                }
             }
         }
     }
