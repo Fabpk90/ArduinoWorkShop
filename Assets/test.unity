@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arduinoA: {fileID: 718798245}
   arduinoB: {fileID: 857588880}
+  numOfCables: 6
 --- !u!4 &56619873
 Transform:
   m_ObjectHideFlags: 0
@@ -216,7 +217,7 @@ MonoBehaviour:
   baudRate: 9600
   messageListener: {fileID: 718798244}
   reconnectionDelay: 1000
-  maxUnreadMessages: 5
+  maxUnreadMessages: 15
 --- !u!4 &718798247
 Transform:
   m_ObjectHideFlags: 0
@@ -248,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &857588880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +280,7 @@ MonoBehaviour:
   baudRate: 9600
   messageListener: {fileID: 857588879}
   reconnectionDelay: 1000
-  maxUnreadMessages: 5
+  maxUnreadMessages: 15
 --- !u!4 &857588882
 Transform:
   m_ObjectHideFlags: 0
