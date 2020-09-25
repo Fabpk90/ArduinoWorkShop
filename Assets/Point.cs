@@ -26,13 +26,15 @@ public class Point : MonoBehaviour
 	{
 		Connection();
 		if(Input.anyKeyDown){
-			string str = name+";";
+			//allCities.Add(new City(new List<int>() { 1 }, "CityA", 0));
+			string str = "allCities.Add(new City(new List<int>() {";
 			foreach (Point p in connected)
 			{
-				str += p.transform.name.Replace('(', ' ').Replace(')', ' ').Trim() + ";";
+				str += p.transform.name +",";
 			}
-
-			str.Remove(str.Length - 1);
+			str = str.Remove(str.Length - 1);
+			str += "}, \"City_" + name + "\", 0))";
+			
 			Debug.Log(str);
 		}
 	}
