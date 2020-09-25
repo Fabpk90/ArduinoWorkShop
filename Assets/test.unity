@@ -154,7 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arduinoA: {fileID: 718798245}
   arduinoB: {fileID: 857588880}
-  numOfCables: 6
+  startingIndex: 0
+  endIndex: 0
+  numOfCables: 10
+  toSend: 0
 --- !u!4 &56619873
 Transform:
   m_ObjectHideFlags: 0
